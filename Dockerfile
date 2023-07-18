@@ -46,6 +46,8 @@ RUN useradd -m --shell /bin/false app
 RUN echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections
 RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections
 
+RUN pip install "git+https://github.com/abconlinecourses/chatgpt-xblock.git"
+
 # Install requirements that are absolutely necessary
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
@@ -77,8 +79,6 @@ RUN apt-get update && \
 RUN mkdir -p /edx/var/edxapp
 RUN mkdir -p /edx/etc
 RUN chown app:app /edx/var/edxapp
-
-RUN pip install "git+https://github.com/abconlinecourses/chatgpt-xblock.git"
 
 # The builder-production stage is a temporary stage that installs required packages and builds the python virtualenv,
 # installs nodejs and node_modules.
