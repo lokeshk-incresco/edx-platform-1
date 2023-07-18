@@ -78,6 +78,8 @@ RUN mkdir -p /edx/var/edxapp
 RUN mkdir -p /edx/etc
 RUN chown app:app /edx/var/edxapp
 
+RUN pip install "git+https://github.com/abconlinecourses/chatgpt-xblock.git"
+
 # The builder-production stage is a temporary stage that installs required packages and builds the python virtualenv,
 # installs nodejs and node_modules.
 # The built artifacts from this stage are then copied to the base stage.
