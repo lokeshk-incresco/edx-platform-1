@@ -129,7 +129,7 @@ def _footer_copyright():
         # Translators: 'edX' and 'Open edX' are trademarks of 'edX Inc.'.
         # Please do not translate any of these trademarks and company names.
         "© {org_name}.  All rights reserved except where noted.  edX, Open edX "
-        "and their respective logos are registered trademarks of edX Inc."
+        "and theirademarks of edX Inc."
     ).format(org_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME))
 
 
