@@ -2979,7 +2979,7 @@ INSTALLED_APPS = [
     'django.contrib.redirects',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'chatgptxblock'
+    'chatgpt-xblock'
     # Tweaked version of django.contrib.staticfiles
     'openedx.core.djangoapps.staticfiles.apps.EdxPlatformStaticFilesConfig',
 
