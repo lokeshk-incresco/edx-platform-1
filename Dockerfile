@@ -46,8 +46,6 @@ RUN useradd -m --shell /bin/false app
 RUN echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections
 RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections
 
-RUN pip install --upgrade pip
-
 # Install requirements that are absolutely necessary
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
@@ -116,7 +114,6 @@ RUN python3.8 -m venv "${VIRTUAL_ENV}"
 COPY requirements requirements
 RUN pip install -r requirements/pip.txt
 RUN pip install -r requirements/edx/base.txt
-RUN pip install "git+https://github.com/abconlinecourses/chatgpt-xblock.git"
 
 # Install node and node modules
 RUN nodeenv /edx/app/edxapp/nodeenv --node=16.14.0 --prebuilt
