@@ -46,6 +46,8 @@ RUN useradd -m --shell /bin/false app
 RUN echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections
 RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections
 
+RUN pip install --upgrade pip
+
 # Install requirements that are absolutely necessary
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
