@@ -465,7 +465,7 @@ FEATURES = {
     #   backends with the AUTHENTICATION_BACKENDS setting.
     # .. toggle_use_cases: open_edx
     # .. toggle_creation_date: 2014-09-15
-    'ENABLE_THIRD_PARTY_AUTH': True,
+    'ENABLE_THIRD_PARTY_AUTH': False,
 
     # .. toggle_name: FEATURES['ENABLE_MKTG_SITE']
     # .. toggle_implementation: DjangoSetting
@@ -1333,15 +1333,10 @@ DEFAULT_TEMPLATE_ENGINE_DIRS = DEFAULT_TEMPLATE_ENGINE['DIRS'][:]
 
 ###############################################################################################
 
-SOCIAL_AUTH_COGNITO_KEY = 'AKIAR3TAHE6T4DCYNZQK'
-SOCIAL_AUTH_COGNITO_SECRET = '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'
-SOCIAL_AUTH_COGNITO_POOL_DOMAIN = 'https://openedx.auth.ap-south-1.amazoncognito.com'
-
 AUTHENTICATION_BACKENDS = [
     'rules.permissions.ObjectPermissionBackend',
     'django.contrib.auth.backends.AllowAllUsersModelBackend',
     'bridgekeeper.backends.RulePermissionBackend',
-    'social_core.backends.cognito.CognitoOAuth2',
 ]
 
 STUDENT_FILEUPLOAD_MAX_SIZE = 4 * 1000 * 1000  # 4 MB
