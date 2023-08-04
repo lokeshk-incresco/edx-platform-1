@@ -5840,7 +5840,7 @@ msgstr "Проходите бесплатные онлайн на edX.org"
 #: lms/djangoapps/branding/api.py
 #, python-brace-format
 msgid ""
-"© {org_name}.  cept where noted.  edX, Open edX and "
+"© {org_name}.  All rights reserved except where noted.  edX, Open edX and "
 "their respective logos are registered trademarks of edX Inc."
 msgstr ""
 
